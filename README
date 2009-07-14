@@ -1,0 +1,81 @@
+quassel
+------------------------------------------
+Quassel IRC is a modern, cross-platform, distributed IRC client based on 
+the Qt4 framework. Distributed means that one (or multiple) client(s) 
+can attach to and detach from a central core that stays permanently 
+online. Re-attaching your client will show your IRC session in the same 
+state as you left it in (plus whatever happened while you were gone), 
+and this even when you re-attach from a different location. In addition, 
+Quassel IRC can be used like a traditional client, with providing both 
+client and core functionality in one binary.
+
+Runtime requirements:
+  cygwin-1.7.0-50
+  libgcc1-4.3.2-2
+  libphonon4-4.3.1-1
+  libQtCore4-4.5.1-1
+  libQtDBus4-4.5.1-1
+  libQtGui4-4.5.1-1
+  libQtNetwork4-4.5.1-1
+  libQtScript4-4.5.1-1
+  libQtSql4-4.5.1-1
+  libQtWebKit4-4.5.1-1
+  libstdc++6-4.3.2-2
+
+Build requirements:
+(besides corresponding -devel packages)
+  automoc4-0.9.88-10
+  binutils-20080624-2
+  cmake-2.6.4-10
+  cygport-0.9.8-1
+  gcc4-core-4.3.2-2
+  gcc4-g++-4.3.2-2
+  make-3.81-2
+  pkg-config-0.23b-10
+
+Canonical website:
+  http://quassel-irc.org/
+
+Canonical download:
+  http://quassel-irc.org/pub/
+
+-------------------------------------------
+
+Build instructions:
+  unpack quassel-0.4.2-X-src.tar.bz2
+    if you use setup to install this src package, it will be
+	 unpacked under /usr/src automatically
+  cd /usr/src
+  cygport ./quassel-0.4.2-X.cygport all
+
+This will create:
+  /usr/src/quassel-0.4.2-X-src.tar.bz2
+  /usr/src/quassel-0.4.2-X.tar.bz2
+
+-------------------------------------------
+
+Files included in the binary package:
+
+  /etc/postinstall/quassel.sh
+  /usr/bin/quassel.exe
+  /usr/bin/quasselclient.exe
+  /usr/bin/quasselcore.exe
+  /usr/share/applications/quassel.desktop
+  /usr/share/applications/quasselclient.desktop
+  /usr/share/doc/quassel/AUTHORS
+  /usr/share/doc/quassel/COPYING
+  /usr/share/doc/quassel/ChangeLog
+  /usr/share/doc/quassel/README
+  /usr/share/icons/hicolor/48x48/apps/quassel.png
+  /usr/share/pixmaps/quassel.png
+
+------------------
+
+Port Notes:
+
+----- version 0.4.2-1 -----
+Initial release for Cygwin 1.7.
+
+
+Cygwin port maintained by:
+http://sourceware.org/cygwinports/

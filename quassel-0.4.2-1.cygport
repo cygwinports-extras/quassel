@@ -1,0 +1,23 @@
+inherit qt4-cmake
+
+DESCRIPTION="Qt4 distributed IRC client"
+HOMEPAGE="http://quassel-irc.org/"
+SRC_URI="http://quassel-irc.org/pub/${P}.tar.bz2"
+
+# the KDE integration doesn't add much feature-wise in exchange for the
+# added dep on kdelibs. (Default is OFF.) To activate:
+# 1) 'inherit kde4' above
+# 2) -DWITH_KDE=ON and -DEMBED_DATA=OFF
+# 3) DBUS (notification-daemon) and PHONON are not used (KNotify is instead)
+CYGCMAKE_ARGS="
+	-DWITH_QTCLIENT=ON
+	-DWITH_CORE=ON
+	-DWITH_MONO=ON
+	-DWITH_WEBKIT=ON
+	-DWITH_PHONON=ON
+	-DWITH_KDE=OFF
+	-DWITH_DBUS=ON
+	-DWITH_OPENSSL=ON
+	-DEMBED_DATA=ON
+	-DPHONON_INCLUDE_DIR=/usr/include/kde4
+"
