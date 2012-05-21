@@ -1,5 +1,5 @@
 category: KDE Net
-requires: libdbusmenu-qt2 libgcc1 libphonon4 libQtCore4 libQtDBus4 libQtGui4 libQtNetwork4 libQtScript4 libQtSql4 libQtWebKit4 libstdc++6
+requires: libdbusmenu-qt2 libgcc1 libphonon4 libqca2 libQtCore4 libQtDBus4 libQtGui4 libQtNetwork4 libQtScript4 libQtSql4 libQtWebKit4 libstdc++6
 sdesc: "Qt4 distributed IRC client"
 ldesc: "Quassel IRC is a modern, cross-platform, distributed IRC client 
 based on the Qt4 framework. Distributed means that one (or multiple) 
