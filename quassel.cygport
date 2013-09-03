@@ -1,0 +1,35 @@
+inherit qt4-cmake
+
+NAME="quassel"
+VERSION=0.9.0
+RELEASE=1
+CATEGORY="Net"
+SUMMARY="Qt4 distributed IRC client"
+DESCRIPTION="Quassel IRC is a modern, cross-platform, distributed IRC client
+based on the Qt4 framework. Distributed means that one (or multiple) client(s)
+can attach to and detach from a central core that stays permanently online.
+Re-attaching your client will show your IRC session in the same state as you
+left it in (plus whatever happened while you were gone), and this even when
+you re-attach from a different location. In addition, Quassel IRC can be used
+like a traditional client, with providing both client and core functionality
+in one binary."
+HOMEPAGE="http://quassel-irc.org/"
+SRC_URI="http://quassel-irc.org/pub/quassel-${VERSION}.tar.bz2"
+
+# the KDE integration doesn't add much feature-wise in exchange for the
+# added dep on kdelibs. (Default is OFF.) To activate:
+# 1) inherit kde4 instead of qt4-cmake above
+# 2) -DWITH_KDE=ON and -DEMBED_DATA=OFF
+# 3) DBUS (notification-daemon) and PHONON are not used (KNotify is instead)
+CYGCMAKE_ARGS="
+	-DWITH_QTCLIENT=ON
+	-DWITH_CORE=ON
+	-DWITH_MONO=ON
+	-DWITH_WEBKIT=ON
+	-DWITH_PHONON=ON
+	-DWITH_KDE=OFF
+	-DWITH_DBUS=ON
+	-DWITH_OPENSSL=ON
+	-DEMBED_DATA=OFF
+	-DPHONON_INCLUDE_DIR=/usr/include
+"
