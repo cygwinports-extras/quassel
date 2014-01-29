@@ -1,7 +1,7 @@
 inherit qt4-cmake
 
 NAME="quassel"
-VERSION=0.9.0
+VERSION=0.9.2
 RELEASE=1
 CATEGORY="Net"
 SUMMARY="Qt4 distributed IRC client"
