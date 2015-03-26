@@ -1,7 +1,7 @@
 inherit qt4-cmake
 
 NAME="quassel"
-VERSION=0.10.1
+VERSION=0.11.0
 RELEASE=1
 CATEGORY="Net"
 SUMMARY="Qt distributed IRC client"
@@ -15,6 +15,7 @@ like a traditional client, with providing both client and core functionality
 in one binary."
 HOMEPAGE="http://quassel-irc.org/"
 SRC_URI="http://quassel-irc.org/pub/quassel-${VERSION}.tar.bz2"
+PATCH_URI="http://pkgs.fedoraproject.org/cgit/quassel.git/plain/quassel-0.11.0-CTCP-query-crash.patch"
 
 # the KDE integration doesn't add much feature-wise in exchange for the
 # added dep on kdelibs. (Default is OFF.) To activate:
