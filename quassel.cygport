@@ -1,8 +1,8 @@
-inherit qt4-cmake
+inherit qt5 cmake
 
 NAME="quassel"
 VERSION=0.12.4
-RELEASE=1
+RELEASE=2
 CATEGORY="Net"
 SUMMARY="Qt distributed IRC client"
 DESCRIPTION="Quassel IRC is a modern, cross-platform, distributed IRC client
@@ -16,6 +16,8 @@ in one binary."
 HOMEPAGE="http://quassel-irc.org/"
 SRC_URI="http://quassel-irc.org/pub/quassel-${VERSION}.tar.bz2"
 
+REQUIRES="oxygen-icons"
+
 # the KDE integration doesn't add much feature-wise in exchange for the
 # added dep on kdelibs. (Default is OFF.) To activate:
 # 1) inherit kde4 instead of qt4-cmake above
@@ -26,11 +28,12 @@ CYGCMAKE_ARGS="
 	-DWITH_QTCLIENT=ON
 	-DWITH_CORE=ON
 	-DWITH_MONO=ON
-	-DWITH_WEBKIT=ON
+	-DWITH_WEBKIT=OFF
 	-DWITH_PHONON=ON
 	-DWITH_KDE=OFF
 	-DWITH_DBUS=ON
 	-DWITH_OPENSSL=ON
+	-DWITH_OXYGEN=OFF
 	-DEMBED_DATA=OFF
 	-DPHONON_INCLUDE_DIR=/usr/include
 "
